@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Online Auction System - Bid on the finest antiques, electronics, vehicles, art, and jewelry.">
+    <title>Auction Portal | Online Auction System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Auction Portal</div>
+        <ul>
+            <li><a href="#auctions" class="active-link">Live Auctions</a></li>
+            <li><a href="#announcements">Announcements</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li id="admin-link" class="hidden"><a href="admin.html">Admin Panel</a></li>
+            <li><a href="#" id="logout-btn" style="color: var(--gold);">Logout</a></li>
+        </ul>
+        <div class="user-greeting">Welcome, <span id="display-name">Guest</span></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h2>Premium Collection</h2>
+        <p>Bid on the finest antiques, electronics, and vehicles from around the globe.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Live Auctions Section -->
+        <section id="auctions">
+            <h2 class="section-title">Live Auctions</h2>
+            <div class="item-grid" id="auction-grid">
+                <div class="loading"><div class="spinner"></div></div>
+            </div>
+        </section>
+
+        <!-- Announcements Section -->
+        <section id="announcements" style="margin-top: 4rem;">
+            <h2 class="section-title">Official Announcements</h2>
+            <div class="announcement-list" id="announcement-list">
+                <div class="loading"><div class="spinner"></div></div>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" style="margin-top: 4rem;">
+            <h2 class="section-title">Share Your Experience</h2>
+            <div class="feedback-form">
+                <form id="feedback-form">
+                    <div class="input-group">
+                        <label>Your Rating</label>
+                        <div class="star-rating">
+                            <input type="radio" name="rating" value="5" id="star5"><label for="star5">★</label>
+                            <input type="radio" name="rating" value="4" id="star4"><label for="star4">★</label>
+                            <input type="radio" name="rating" value="3" id="star3" checked><label for="star3">★</label>
+                            <input type="radio" name="rating" value="2" id="star2"><label for="star2">★</label>
+                            <input type="radio" name="rating" value="1" id="star1"><label for="star1">★</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="comment">Your Feedback</label>
+                        <textarea id="comment" rows="4" placeholder="Tell us about your auction experience..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Submit Feedback</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <span>Premium Auction House</span>. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

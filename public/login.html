@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Portal | Login & Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(44,26,25,0.92) 0%, rgba(74,44,42,0.85) 100%),
+                        url('https://images.unsplash.com/photo-1584281723358-868779836371?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat;
+            padding: 2rem;
+        }
+
+        .auth-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            width: 100%;
+            max-width: 460px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--amber), var(--gold));
+        }
+
+        .auth-card .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--mahogany);
+            margin-bottom: 0.3rem;
+        }
+
+        .auth-card .logo-text::before {
+            content: '⚜';
+            display: block;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-card .subtitle {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .auth-card .input-group {
+            text-align: left;
+        }
+
+        .auth-card .btn-primary {
+            width: 100%;
+            padding: 0.9rem;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .auth-toggle {
+            margin-top: 1.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .auth-toggle span {
+            color: var(--gold);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .auth-toggle span:hover {
+            color: var(--amber);
+            text-decoration: underline;
+        }
+
+        .error-msg {
+            color: var(--red);
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+            min-height: 1.2rem;
+        }
+
+        .success-msg {
+            color: var(--green);
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+            min-height: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-card">
+            <div class="logo-text" id="auth-title">Auction Portal</div>
+            <p class="subtitle" id="auth-subtitle">Sign in to access premium auctions</p>
+
+            <!-- Login Form -->
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="name@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary" id="login-btn">Sign In</button>
+                <div class="error-msg" id="login-error"></div>
+                <p class="auth-toggle">New here? <span id="show-signup">Create an account</span></p>
+            </form>
+
+            <!-- Signup Form (Hidden) -->
+            <form id="signup-form" class="hidden">
+                <div class="input-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" placeholder="John Doe" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-phone">Phone Number</label>
+                    <input type="tel" id="signup-phone" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="name@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Min 6 characters" minlength="6" required>
+                </div>
+                <button type="submit" class="btn btn-primary" id="signup-btn">Create Account</button>
+                <div class="error-msg" id="signup-error"></div>
+                <div class="success-msg" id="signup-success"></div>
+                <p class="auth-toggle">Already have an account? <span id="show-login">Sign in</span></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
